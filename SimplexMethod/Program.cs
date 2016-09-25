@@ -11,7 +11,13 @@ namespace SimplexMethod
     {
         static void Main(string[] args)
         {
-            StreamReader streamreader = new StreamReader("input.txt");
+            double[,] matrix;
+            matrix = SimplexSolver.BuildMaxtrix("input.txt");
+            Console.WriteLine("----------Исходная матрица----------");
+            SimplexSolver.PrintMaxtrix(matrix);
+            Console.WriteLine();
+            SimplexSolver.Solve(matrix);
+            Console.ReadKey();
         }
     }
 }
